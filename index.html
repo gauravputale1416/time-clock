@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Clock</title>
+    <style>
+        body{
+            margin: 0%;
+    background-color: #E4EFE7;
+        }
+        .main{
+        background-color: black;
+        width: 50%;
+         padding: 50px;
+        margin: 100px auto;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px 20px rgba(192, 30, 30, 0.2);
+        border: 3px solid red;
+        
+
+        }
+        .submain{
+            background-color: beige;
+            display: flex;
+            font-size: 60px;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .head{
+            text-align: center;
+        }
+        .Daate{
+            background-color: black;
+        width: 50%;
+         padding: 50px;
+        margin: 100px auto;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px 20px rgba(255, 22, 22, 0.2);
+        border: 3px solid red;
+        
+        }
+        .indate{
+            background-color: beige;
+            display: flex;
+            font-size: 60px;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="head">
+       <u>  &nbsp; &nbsp;TIME & DATE IN INDIA  &nbsp; &nbsp;</u>
+    </h1>
+    <div class="main">
+        <div class="submain">
+        <div id="hours">8</div>
+        <div>:</div>
+        <div id="minite">16</div>
+        <div>:</div>
+        <div id="sec">24</div>
+        &nbsp;
+        <div id="amPm">AM</div>
+    </div>
+
+    </div>
+
+<div class="Daate">
+    <div id="date" class="indate">03/06/2003</div>
+</div>
+
+    <script>
+       
+        setInterval(lock,1000)
+        function lock(){
+
+  
+        const hoursElement=document.getElementById("hours")
+        const miniteElement=document.getElementById("minite")
+        const secElement=document.getElementById("sec")
+        const parah=document.getElementById("amPm")
+        const date= new Date();
+        console.log(date)
+
+        
+       
+        let tass=date.getHours();
+        let tasses=tass>=12?tass-12:tass
+
+        let mint=date.getMinutes();
+let mintii= mint<=10?"0"+mint: mint;
+
+        let sec=date.getSeconds();
+        let secc=sec<=10?"0"+sec: sec;
+
+        parah.innerText=tass<=12?"AM":"PM";
+         
+       
+        
+
+        hoursElement.innerHTML=`<div>${tasses}</div>`;
+        miniteElement.innerText=mintii;
+        secElement.innerText=secc;
+
+
+        const tarik=document.getElementById("date")
+
+        let taraka=date.toLocaleDateString();
+
+        tarik.innerText=taraka;
+
+    }
+
+
+   
+    </script>
+</body>
+</html>
